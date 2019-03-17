@@ -5,7 +5,7 @@
     </div>
     <div class="search-content" ref="search" v-show="keyword"><!-- 不遮挡热门城市等 -->
       <ul>
-        <li class="search-item border-bottom" v-for="item of list" :key="item.id" @click="handleBtnClick(item.name)">
+        <li class="search-item border-bottom" v-for="item of list" :key="item.id" @click="handleBtnClick(item)">
           {{item.name}}
         </li>
         <li class="search-item border-bottom" v-show="hasList"><!--输入框有值不显示 -->
@@ -17,7 +17,7 @@
 </template>
 
 <script>
-import { mapMutations } from 'vuex'
+import { mapState, mapMutations } from 'vuex'
 import Bscroll from 'better-scroll'
 export default {
   name: 'CitySearch',
@@ -25,9 +25,12 @@ export default {
     cities: Object
   },
   methods: {
-    handleBtnClick (name) {
-      this.changeCity(name)
-      this.$router.push('/')
+    handleBtnClick (city) {
+      console.log()
+      this.currentCity.city = city.name
+      this.currentCity.id = city.id
+      this.changeCity(this.currentCity)
+      this.$router.push('/addr')
     },
     ...mapMutations({
       changeCity: 'changeCity'
@@ -41,6 +44,15 @@ export default {
     }
   },
   computed: {
+    ...mapState(['city']),
+    currentCity: {
+      get: function () {
+        if (typeof this.city === 'string') {
+          return JSON.parse(this.city)
+        }
+        return this.city
+      }
+    },
     hasList () {
       return !this.list.length
     }

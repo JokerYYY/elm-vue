@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="header">
-      <router-link to="/city">
+      <router-link to="/">
         <div class="header-position">
           <span class="iconfont">&#xe63c;</span>
           <span class="header-position-city">{{this.addr.name}}</span>

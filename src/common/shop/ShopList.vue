@@ -60,7 +60,15 @@ export default {
   computed: {
     ...mapState({
       addr: 'addr'
-    })
+    }),
+    currentAddr: {
+      get: function () {
+        if (typeof this.addr === 'string') {
+          return JSON.parse(this.addr)
+        }
+        return this.addr
+      }
+    }
   },
   components: {
     RatingStar,
@@ -72,7 +80,7 @@ export default {
   methods: {
     async initData () {
       // 获取数据
-      let res = await shopList(this.addr.latitude, this.addr.longitude, this.offset)
+      let res = await shopList(this.currentAddr.latitude, this.currentAddr.longitude, this.offset)
       res = res.data
       this.shopListArr = [...res]
     },
@@ -82,7 +90,7 @@ export default {
           this.loading = false
           this.offset += 20
           // 获取数据
-          let res = await shopList(this.addr.latitude, this.addr.longitude, this.offset)
+          let res = await shopList(this.currentAddr.latitude, this.currentAddr.longitude, this.offset)
           res = res.data
           this.shopListArr = [...this.shopListArr, ...res]
           if (res.length <= 20) {

@@ -1,6 +1,6 @@
 <template>
   <section id="foot_guide">
-    <router-link tag="section" class="guide_item" :to="'/'">
+    <router-link tag="section" class="guide_item" :to="'/home'">
       <span class="iconfont guide_item_icon guide_item_home" :class="{guide_item_light : isLight0}">&#xe722;</span>
       <span class="guide_item_desc">外卖</span>
     </router-link>
@@ -41,7 +41,7 @@ export default {
   mounted () {
     this.setFalse()
     const path = this.$route.path
-    if (path.length === 1 && path.endsWith('/')) {
+    if (path.startsWith('/home')) {
       this.isLight0 = true
     }
     if (path.startsWith('/search')) {
@@ -75,6 +75,7 @@ export default {
       text-align: center
       flex-direction: column
       align-items: center
+      color: #666
       .guide_item_icon
         font-size: .5rem
         margin: .05rem 0

@@ -1,6 +1,6 @@
 <template>
   <section class="user_addr">
-    <router-link class="user_addr_icon" :to="'/city'">
+    <router-link class="user_addr_icon" :to="'/'">
       <span class="iconfont user_addr_logo">&#xe63c;</span>
       我的地址
     </router-link>

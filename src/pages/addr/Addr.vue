@@ -1,18 +1,31 @@
 <template>
   <div class="addr-contain">
-    <addr-header></addr-header>
+    <common-header :content="current.city" :goBack="true"></common-header>
     <addr-search></addr-search>
   </div>
 </template>
 
 <script>
-import AddrHeader from './components/Header'
+import CommonHeader from 'common/header/Header'
 import AddrSearch from './components/Search'
+import { mapState } from 'vuex'
 export default {
   name: 'Addr',
-
+  computed: {
+    ...mapState({
+      currentCity: 'city'
+    }),
+    current: {
+      get: function () {
+        if (typeof this.currentCity === 'string') {
+          return JSON.parse(this.currentCity)
+        }
+        return this.currentCity
+      }
+    }
+  },
   components: {
-    AddrHeader,
+    CommonHeader,
     AddrSearch
   }
 }

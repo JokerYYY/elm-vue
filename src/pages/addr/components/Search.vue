@@ -7,7 +7,7 @@
     <div class="title border-topbottom"  v-show="historytitle">搜索历史</div>
     <div class="title border-topbottom"  v-show="placeNone">很抱歉！搜索无结果</div>
     <div class="pois border-bottom" v-for="(item, index) in placelist" :key="index" @click="nextpage(index, item.geohash)">
-      <h4 class="pois_name">{{item.name}}</h4>
+      <p class="pois_name">{{item.name}}</p>
       <p class="pois_address">{{item.address}}</p>
     </div>
   </div>
@@ -31,7 +31,7 @@ export default {
   computed: {
     ...mapState({
       // 当前定位城市
-      currentCitys: 'citySp'
+      currentCitys: 'city'
     }),
     current: {
       get: function () {
@@ -84,7 +84,7 @@ export default {
       }
       setStore('placeHistory', this.placeHistory)
       this.changeAddr(this.placelist[index])
-      this.$router.push({path: '/', query: {geohash}})
+      this.$router.push({path: '/home', query: {geohash}})
     },
     ...mapMutations({
       changeAddr: 'changeAddr'

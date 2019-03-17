@@ -1,6 +1,6 @@
 <template>
   <div>
-    <common-header :content="content"></common-header>
+    <common-header :content="content" :goBack="true"></common-header>
     <foot-guide></foot-guide>
   </div>
 </template>

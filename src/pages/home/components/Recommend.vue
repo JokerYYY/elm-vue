@@ -8,9 +8,6 @@
 import ShopList from 'common/shop/ShopList'
 export default {
   name: 'HomeRecommend',
-  props: {
-    recommendList: Array
-  },
   components: {
     ShopList
   }

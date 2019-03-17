@@ -53,8 +53,7 @@ export default {
   computed: {
     ...mapState({
       // 当前定位城市
-      currentCitys: 'citySp',
-      currentCity: 'city'
+      currentCitys: 'city'
     }),
     current: {
       get: function () {
@@ -66,18 +65,13 @@ export default {
     }
   },
   methods: {
-    // handleBtnClick (name) {
-    //   this.changeCity(name)
-    //   this.$router.push('/addr')
-    // },
     handleBtnClicks (id, city) {
       this.city.city = city
       this.city.cityId = id
-      this.changeCitys(this.city)
+      this.changeCity(this.city)
       this.$router.push('/addr')
     },
     ...mapMutations({
-      changeCitys: 'changeCitys',
       changeCity: 'changeCity'
     })
   },

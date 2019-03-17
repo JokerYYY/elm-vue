@@ -3,21 +3,21 @@
     <ul class="clear">
       <router-link to="/balance" tag="li" class="info-data-link">
         <p class="info-data-content">
-          <span class="info-data-balance-left font-size-left">15.00</span>
+          <span class="info-data-balance-left font-size-left">{{balance}}</span>
           <span class="info-data-balance-right font-size-right">元</span>
         </p>
         <span class="info-data-bottom">钱包</span>
       </router-link>
       <router-link to="/redenve" tag="li" class="info-data-link">
         <p class="info-data-content">
-          <span class="info-data-redenve-left font-size-left">14</span>
+          <span class="info-data-redenve-left font-size-left">{{count}}</span>
           <span class="info-data-redenve-right font-size-right">个</span>
         </p>
         <span class="info-data-bottom">红包</span>
       </router-link>
       <router-link to="/gold" tag="li" class="info-data-link">
         <p class="info-data-content">
-          <span class="info-data-gold-left font-size-left">5</span>
+          <span class="info-data-gold-left font-size-left">{{pointNumber}}</span>
           <span class="info-data-gold-right font-size-right">个</span>
         </p>
         <span class="info-data-bottom">金币</span>
@@ -28,7 +28,8 @@
 
 <script>
 export default {
-  name: 'UserData'
+  name: 'UserData',
+  props: ['balance', 'count', 'pointNumber']
 }
 </script>
 

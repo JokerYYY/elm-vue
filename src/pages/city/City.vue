@@ -30,7 +30,7 @@ export default {
   },
   methods: {
     getCitiInfo () {
-      axios.get('/api/cityList.json').then(this.handleGetCitySucc)
+      axios.get('/mock/cityList').then(this.handleGetCitySucc)
     },
     handleGetCitySucc (res) {
       res = res.data
@@ -41,10 +41,10 @@ export default {
       }
     },
     updateCity (city) {
-      this.changeCitys(city)
+      this.changeCity(city)
     },
     ...mapMutations({
-      changeCitys: 'changeCitys'
+      changeCity: 'changeCity'
     }),
     changeLetter (letter) {
       this.letter = letter

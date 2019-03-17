@@ -1,6 +1,6 @@
 <template>
   <div>
-    <common-header :content="content"></common-header>
+    <common-header :content="content" :goBack="true"></common-header>
     <search-bar></search-bar>
     <foot-guide></foot-guide>
   </div>
@@ -14,13 +14,13 @@ export default {
   name: 'Search',
   data () {
     return {
-      content: '搜索',
+      content: '搜索'
     }
   },
   components: {
     FootGuide,
     SearchBar,
-    CommonHeader,
+    CommonHeader
   }
 }
 </script>

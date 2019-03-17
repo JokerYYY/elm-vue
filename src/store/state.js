@@ -1,27 +1,27 @@
-let defaultCity = '杭州'
-let defaultCitySp = {
+let defaultCity = {
   city: '杭州',
   cityId: '2'
 }
 let defaultAddr = {
   name: '请选择地址...'
 }
+let defaultUserInfo = ''
 try {
   if (localStorage.city) {
     defaultCity = localStorage.city
   }
-  if (localStorage.citySp) {
-    defaultCitySp = localStorage.citySp
-  }
   if (localStorage.addr) {
     defaultAddr = JSON.parse(localStorage.addr)
+  }
+  if(localStorage.userInfo) {
+    defaultUserInfo = JSON.parse(localStorage.userInfo)
   }
 } catch (e) {
 
 }
 
 export default {
-  citySp: defaultCitySp,
   city: defaultCity,
-  addr: defaultAddr
+  addr: defaultAddr,
+  userInfo: defaultUserInfo
 }

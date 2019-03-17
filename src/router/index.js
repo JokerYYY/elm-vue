@@ -6,21 +6,17 @@ Vue.use(Router)
 export default new Router({
   routes: [
     {
-      path: '/',
+      path: '/home',
       name: 'Home',
       component: () => import('@/pages/home/Home')
     }, {
-      path: '/city',
+      path: '/',
       name: 'City',
       component: () => import('@/pages/city/City')
     }, {
       path: '/addr',
       name: 'Addr',
       component: () => import('@/pages/addr/Addr')
-    }, {
-      path: '/detail/:id',
-      name: 'Detail',
-      component: () => import('@/pages/detail/Detail')
     }, {
       path: '/search',
       name: 'Search',

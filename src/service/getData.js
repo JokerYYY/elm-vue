@@ -1,4 +1,5 @@
 import axios from 'axios'
+import fetch from '../config/fetch'
 
 /**
  * 获取当前地址
@@ -22,7 +23,7 @@ export const searchPlace = (citiId, value) =>
  * 获取首页商铺列表
  */
 
-export const shopList = (latitude, longitude, offset, restaurant_category_id = '', restaurant_category_ids = '', order_by = '', delivery_mode = '', support_ids = []) => {
+export const shopList = (latitude, longitude, offset, restaurant_category_id = '', restaurant_category_ids = '', order_by = '', deliveryMode = '', support_ids = []) => {
   let supportStr = ''
   support_ids.forEach(item => {
     if (item.status) {
@@ -40,7 +41,7 @@ export const shopList = (latitude, longitude, offset, restaurant_category_id = '
       restaurant_category_id,
       'restaurant_category_ids[]': restaurant_category_ids,
       order_by,
-      'delivery_mode[]': delivery_mode + supportStr
+      'delivery_mode[]': deliveryMode + supportStr
     }
   })
 }
@@ -63,9 +64,17 @@ export const searchRestaurant = (geohash, keyword) =>
  * 获取图片验证码
  */
 
-export const getcaptchas = () =>
-  axios.post('http://cangdu.org:8001/v1/captchas')
-  // fetch('/v1/captchas', {}, 'POST')
+export const getcaptchas = () => fetch('http://cangdu.org:8001/v1/captchas', {}, 'POST')
+
+/**
+ * 账号密码登录
+ */
+export const accountLogin = (username, password, captchaCode) =>
+  fetch('http://cangdu.org:8001/v2/login', {
+    username,
+    password,
+    captcha_code: captchaCode
+  }, 'POST')
 
 /**
  * 获取localStorage

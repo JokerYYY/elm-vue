@@ -6,10 +6,10 @@
           <span class="iconfont user_img_icon">&#xe62b;</span>
         </div>
         <router-link tag="div" class="user_info" :to="'/login'">
-            <p class="user_info_name">丽水湾</p>
+            <p class="user_info_name">{{username}}</p>
             <p class="user_info_photo">
               <span class="iconfont">&#xe607;</span>
-              <span>138****5236</span>
+              <span>{{mobile}}</span>
             </p>
         </router-link>
       </div>
@@ -19,7 +19,11 @@
 
 <script>
 export default {
-  name: 'UserInfo'
+  name: 'UserInfo',
+  props: {
+    username: String,
+    mobile: String
+  }
 }
 </script>
 

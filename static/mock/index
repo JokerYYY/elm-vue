@@ -1,0 +1,64 @@
+{
+  "ret": true,
+  "data": {
+    "swiperList": [{
+      "id": "0001",
+      "imgUrl": "https://fuss10.elemecdn.com/1/9c/d8da44b63fa1208476992df88edc9jpeg.jpeg?imageMogr/format/webp/thumbnail/568x"
+    },{
+      "id": "0002",
+      "imgUrl": "https://fuss10.elemecdn.com/9/0e/817efa3acbc74e937551e9b1fae28jpeg.jpeg?imageMogr/format/webp/thumbnail/568x"
+    },{
+      "id": "0003",
+      "imgUrl": "https://fuss10.elemecdn.com/4/48/37fce9a4ffbec79293357f68ecfcbjpeg.jpeg?imageMogr/format/webp/thumbnail/568x"
+    }],
+    "iconList": [{
+      "id": "0001",
+      "imgUrl": "https://fuss10.elemecdn.com/7/d8/a867c870b22bc74c87c348b75528djpeg.jpeg?imageMogr/format/webp/thumbnail/!90x90r/gravity/Center/crop/90x90",
+      "desc": "美食"
+    }, {
+      "id": "0002",
+      "imgUrl": "https://fuss10.elemecdn.com/c/7e/76a23eb90dada42528bc41499d6f8jpeg.jpeg?imageMogr/format/webp/thumbnail/!90x90r/gravity/Center/crop/90x90",
+      "desc": "超市便利"
+    }, {
+      "id": "0003",
+      "imgUrl": "https://fuss10.elemecdn.com/0/d0/dd7c960f08cdc756b1d3ad54978fdjpeg.jpeg?imageMogr/format/webp/thumbnail/!90x90r/gravity/Center/crop/90x90",
+      "desc": "水果"
+    }, {
+      "id": "0004",
+      "imgUrl": "https://fuss10.elemecdn.com/7/0a/af108e256ebc9f02db599592ae655jpeg.jpeg?imageMogr/format/webp/thumbnail/!90x90r/gravity/Center/crop/90x90/",
+      "desc": "医疗健康"
+    }, {
+      "id": "0005",
+      "imgUrl": "https://fuss10.elemecdn.com/e/58/bceb19258e3264e64fb856722c3c1jpeg.jpeg?imageMogr/format/webp/thumbnail/!90x90r/gravity/Center/crop/90x90",
+      "desc": "跑腿代购"
+    }, {
+      "id": "0006",
+      "imgUrl": "https://fuss10.elemecdn.com/b/7f/432619fb21a40b05cd25d11eca02djpeg.jpeg?imageMogr/format/webp/thumbnail/!90x90r/gravity/Center/crop/90x90/",
+      "desc": "汉堡披萨"
+    }, {
+      "id": "0007",
+      "imgUrl": "https://fuss10.elemecdn.com/c/21/e42997b86b232161a5a16ab813ae8jpeg.jpeg?imageMogr/format/webp/thumbnail/!90x90r/gravity/Center/crop/90x90/",
+      "desc": "厨房生鲜"
+    }, {
+      "id": "0008",
+      "imgUrl": "https://fuss10.elemecdn.com/a/8a/ec21096d528b7cfd23cdd894f01c6jpeg.jpeg?imageMogr/format/webp/thumbnail/!90x90r/gravity/Center/crop/90x90/",
+      "desc": "地方菜系"
+    }, {
+      "id": "0009",
+      "imgUrl": "https://fuss10.elemecdn.com/0/1a/314b6da88ab6c7ae9828f91652d40jpeg.jpeg?imageMogr/format/webp/thumbnail/!90x90r/gravity/Center/crop/90x90/",
+      "desc": "速食简餐"
+    }, {
+      "id": "0010",
+      "imgUrl": "https://fuss10.elemecdn.com/7/d6/6f2631288a44ec177204e05cbcb93jpeg.jpeg?imageMogr/format/webp/thumbnail/!90x90r/gravity/Center/crop/90x90/",
+      "desc": "大牌惠吃"
+    }, {
+      "id": "0011",
+      "imgUrl": "https://fuss10.elemecdn.com/e/89/185f7259ebda19e16123884a60ef2jpeg.jpeg?imageMogr/format/webp/thumbnail/!90x90r/gravity/Center/crop/90x90/",
+      "desc": "包子粥店"
+    }, {
+      "id": "0012",
+      "imgUrl": "https://fuss10.elemecdn.com/3/01/c888acb2c8ba9e0c813f36ec9e90ajpeg.jpeg?imageMogr/format/webp/thumbnail/!90x90r/gravity/Center/crop/90x90/",
+      "desc": "浪漫鲜花"
+    }]
+  }
+}

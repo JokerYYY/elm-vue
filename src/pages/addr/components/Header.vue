@@ -1,9 +1,9 @@
 <template>
   <div class="header">
     {{this.current.city}}
-    <router-link to="/city">
-      <div class="iconfont header-icon">&#xe604;</div>
-    </router-link>
+    <!--<router-link to="/city">-->
+      <div class="iconfont header-icon" @click="$router.go(-1)">&#xe604;</div>
+    <!--</router-link>-->
   </div>
 </template>
 
@@ -13,7 +13,7 @@ export default {
   name: 'AddrHeader',
   computed: {
     ...mapState({
-      currentCity: 'citySp'
+      currentCity: 'city'
     }),
     current: {
       get: function () {
