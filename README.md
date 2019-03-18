@@ -1,6 +1,6 @@
 # elm-vue
 
-> A Vue.js project
+> 基于vue开发的饿了么移动端实战
 
 ## Build Setup
 
