@@ -23,6 +23,7 @@ export default {
   name: 'User',
   data () {
     return {
+      username: '登录/注册', // 用户名
       content: '',
       mobile: '暂未绑定手机号', // 手机
       balance: 0, // 余额
