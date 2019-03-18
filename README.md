@@ -2,6 +2,15 @@
 
 > 基于vue开发的饿了么移动端实战
 
+# 项目概述
+  vue自学练手项目
+# 项目描述
+  饿了么移动端实战项目是一个基于vue开发的单页面应用项目，项目现在包含首页、城市选择、地址选择、搜索、个人中心、登录注册等页面，页面间路由由vue-router实现，同时利用vuex和总线实现页面间、组件间的数据交互和共享，通过aioxs异步获取数据并由vue渲染到页面上
+## 技术栈
+  vue2 + vuex + vue-router + webpack + ES6/7 + axios + stylus + iconfont
+## 项目访问地址
+  http://demo.chris.org.cn
+
 ## Build Setup
 
 ``` bash
