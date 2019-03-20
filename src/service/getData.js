@@ -8,6 +8,20 @@ export const getCurrentCity = () =>
   axios.get('http://elm.cangdu.org/v1/cities?type=guess')
 
 /**
+ * 获取城市选择页热门城市
+ */
+
+export const hotcity = () =>
+  axios.get('http://elm.cangdu.org/v1/cities?type=hot')
+
+/**
+ * 获取城市选择页所有城市
+ */
+
+export const groupcity = () =>
+  axios.get('http://elm.cangdu.org/v1/cities?type=group')
+
+/**
  * 获取搜索地址
  */
 export const searchPlace = (citiId, value) =>

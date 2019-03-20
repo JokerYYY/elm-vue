@@ -78,7 +78,6 @@ export default {
       }
       // 用户名登录
       this.userInfo = await accountLogin(this.userAccount, this.passWord, this.codeNumber)
-      console.log(JSON.stringify(this.userInfo))
       if (!this.userInfo.user_id) {
         this.showAlert = true
         this.alertText = this.userInfo.message

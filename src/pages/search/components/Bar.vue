@@ -74,7 +74,6 @@ export default {
     })
   },
   mounted () {
-    console.log('current: ' + typeof this.currentAddr)
     this.initData()
   },
   methods: {
@@ -96,9 +95,7 @@ export default {
       // 获取搜索结果
       let res = await searchRestaurant(this.currentAddr.geohash, this.keyword)
       this.shopListArr = res.data
-      console.log('shopListArr: ' + this.shopListArr.length)
       this.showSearch = this.shopListArr.length
-      console.log('showSearch: ' + this.showSearch)
       this.placeNone = !this.shopListArr.length
     },
     saveHistory () {

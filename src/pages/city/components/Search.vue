@@ -26,7 +26,6 @@ export default {
   },
   methods: {
     handleBtnClick (city) {
-      console.log()
       this.currentCity.city = city.name
       this.currentCity.id = city.id
       this.changeCity(this.currentCity)

@@ -9,10 +9,10 @@
       </router-link>
     </div>
     <div class="header">
-      <div class="header-input">
+      <router-link tag="div" class="header-input" :to="'/search'">
         <span class="iconfont">&#xe62d;</span>
         搜索商家、商品名称
-      </div>
+      </router-link>
     </div>
   </div>
 </template>

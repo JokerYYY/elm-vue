@@ -8,12 +8,11 @@
 </template>
 
 <script>
-import axios from 'axios'
 import CitySearch from './components/Search'
 import CityList from './components/List'
 import CityAlphabet from './components/Alphabet'
 import CommonHeader from 'common/header/Header'
-import {getCurrentCity} from '../../service/getData'
+import {getCurrentCity, hotcity, groupcity} from '../../service/getData'
 import { mapMutations } from 'vuex'
 export default {
   name: 'City',
@@ -29,17 +28,6 @@ export default {
     }
   },
   methods: {
-    getCitiInfo () {
-      axios.get('/mock/cityList').then(this.handleGetCitySucc)
-    },
-    handleGetCitySucc (res) {
-      res = res.data
-      if (res.ret && res.data) {
-        const data = res.data
-        this.cities = data.cities
-        this.hotCities = data.hotCities
-      }
-    },
     updateCity (city) {
       this.changeCity(city)
     },
@@ -61,7 +49,20 @@ export default {
     } else {
       this.updateCity(localStorage.citySp)
     }
-    this.getCitiInfo()
+    hotcity().then(res => {
+      res = res.data
+      this.hotCities = res.splice(0, 6)
+    })
+    groupcity().then(res => {
+      res = res.data
+      let keys = Object.keys(res).sort()
+      var newObj = {}
+      for (let i = 0; i < keys.length; i++) {
+        var index = keys[i]
+        newObj[index] = res[index]
+      }
+      this.cities = newObj
+    })
   },
   components: {
     CommonHeader,
