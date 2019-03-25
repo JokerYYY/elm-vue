@@ -1,10 +1,10 @@
 <template>
   <ul class="list">
     <li class="item" v-for="item of letters" :key="item" :ref="item"
-    @click="handleLetterClick"
     @touchstart.prevent="handleTouchStart"
     @touchmove="handleTouchMove"
-    @touchend="handleTouchEnd">{{item}}</li>
+    @touchend="handleTouchEnd"
+    ><a href="javascript:void(0);" @click="handleLetterClick">{{item}}</a></li>
   </ul>
 </template>
 

@@ -13,7 +13,7 @@ try {
   if (localStorage.addr) {
     defaultAddr = JSON.parse(localStorage.addr)
   }
-  if(localStorage.userInfo) {
+  if (localStorage.userInfo) {
     defaultUserInfo = JSON.parse(localStorage.userInfo)
   }
 } catch (e) {

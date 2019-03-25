@@ -4,6 +4,7 @@ import Router from 'vue-router'
 Vue.use(Router)
 
 export default new Router({
+  mode: 'history',
   routes: [
     {
       path: '/home',
@@ -33,6 +34,10 @@ export default new Router({
       path: '/login',
       name: 'Login',
       component: () => import('@/pages/login/Login')
+    }, {
+      path: '/shop',
+      name: 'Shop',
+      component: () => import('@/pages/shop/Shop')
     }],
   scrollBehavior (to, from, savePosition) {
     return {
