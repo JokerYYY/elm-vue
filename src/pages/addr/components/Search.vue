@@ -136,13 +136,13 @@ export default {
     background: #fff
     .pois_name
       width: 90%
-      font-size: .38rem
+      font-size: .28rem
       color: #333
       padding-bottom: .05rem
       ellipsis()
     .pois_address
       width: 90%
-      font-size: .28rem
+      font-size: .24rem
       /*line-height:  */
       color: #999
       ellipsis()
