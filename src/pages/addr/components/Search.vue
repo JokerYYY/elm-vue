@@ -71,6 +71,7 @@ export default {
           this.placeNone = res.length === 0
         })
       } else {
+        this.placelist = []
         this.initData()
       }
     },
@@ -135,13 +136,14 @@ export default {
     background: #fff
     .pois_name
       width: 90%
-      font-size: .26rem
+      font-size: .38rem
       color: #333
-      padding-bottom: .1rem
+      padding-bottom: .05rem
       ellipsis()
     .pois_address
       width: 90%
-      font-size: .2rem
+      font-size: .28rem
+      /*line-height:  */
       color: #999
       ellipsis()
 </style>
