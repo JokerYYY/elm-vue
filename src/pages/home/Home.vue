@@ -1,7 +1,7 @@
 <template>
   <div>
     <home-header></home-header>
-    <home-icon :iconsList="iconsList"></home-icon>
+    <home-icon :iconsList="iconsList" :geohash="geohash"></home-icon>
     <home-swiper :swiperList="swiperList"></home-swiper>
     <home-recommend></home-recommend>
     <foot-guide></foot-guide>
@@ -15,15 +15,14 @@ import HomeRecommend from './components/Recommend'
 import FootGuide from 'common/footer/FootGuide'
 import axios from 'axios'
 import { mapState } from 'vuex'
+import { getCurrentCity } from '../../service/getData'
 export default {
   name: 'Home',
   data () {
     return {
-      lastCity: '',
+      geohash: '',
       swiperList: [],
       iconsList: [],
-      recommendList: [],
-      weekendList: [],
       loading: false
     }
   },
@@ -56,6 +55,16 @@ export default {
         this.swiperList = data.swiperList
         this.iconsList = data.iconList
       }
+    }
+  },
+  async beforeMount () {
+    if (!this.$route.query.geohash) {
+      getCurrentCity().then(res => {
+        res = res.data
+        this.geohash = res.latitude + ',' + res.longitude
+      })
+    } else {
+      this.geohash = this.$route.query.geohash
     }
   },
   mounted () {

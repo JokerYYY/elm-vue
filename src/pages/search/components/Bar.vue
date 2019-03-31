@@ -53,15 +53,20 @@
 </template>
 
 <script>
-import {getStore, searchRestaurant, setStore} from '../../../service/getData'
+import {getStore, searchRestaurant, setStore, shopList} from '../../../service/getData'
 import { mapState } from 'vuex'
 export default {
   name: 'SearchBar',
   data () {
     return {
+      geohash: '',
+      title: '', // 分类名称
+      restaurantCategoryId: '', // 分类id
+      offset: 20,
       keyword: '',
       historyList: [], // 历史搜索列表
       shopListArr: [], // 根据关键字查询的商家列表
+      shopListArrByRes: [], // 根据分类查询的商家列表
       showHistory: true, // 默认显示搜索历史头部
       showSearch: false, // 是否展示商家列表
       placeNone: false, // 搜索无结果，显示提示信息
@@ -73,14 +78,21 @@ export default {
       currentAddr: 'addr'
     })
   },
+
   mounted () {
     this.initData()
   },
   methods: {
-    initData () {
+    async initData () {
       // 搜索历史
       if (getStore('searchHistory')) {
         this.historyList = JSON.parse(getStore('searchHistory'))
+      }
+      if (this.$route.query.geohash && this.$route.query.title &&
+        this.$route.query.restaurant_category_id) {
+        this.showHistory = false
+        let res = await shopList(this.currentAddr.latitude, this.currentAddr.longitude, this.offset)
+        this.shopListArr = [...res]
       }
     },
     // 查询商家

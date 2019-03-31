@@ -2,12 +2,13 @@
   <div class="icons border-bottom">
     <swiper :options="swiperOption" v-if="showSwiper">
       <swiper-slide v-for="(page,index) of pages" :key="index">
-        <div class="icon" v-for="item of page" :key="item.id">
+        <router-link tag="div" class="icon" v-for="item of page" :key="item.id"
+                     :to="{path: '/search', query: {geohash, title: item.desc, restaurant_category_id: item.id}}">
           <div class="icon-img">
             <img class="icon-img-content" :src="item.imgUrl" />
           </div>
           <p  class="icon-desc">{{item.desc}}</p>
-        </div>
+        </router-link>
       </swiper-slide>
     </swiper>
   </div>
@@ -16,7 +17,8 @@
 export default {
   name: 'HomeIcon',
   props: {
-    iconsList: Array
+    iconsList: Array,
+    geohash: String
   },
   data () {
     return {

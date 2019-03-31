@@ -12,7 +12,7 @@
         <span class="iconfont account_icon" v-show="showPsd" @click="showPassword()">&#xe618;</span>
       </section>
       <section class="input_container border-bottom">
-        <input class="account_input pad_left" type="password" placeholder="验证码" maxlength="4" v-model="codeNumber">
+        <input class="account_input pad_left" type="tel" placeholder="验证码" maxlength="4" v-model="codeNumber">
         <img v-show="captchaCodeImg" class="img_change_img_content" :src="captchaCodeImg" @click="getCaptchaCode()">
       </section>
       <p class="login_tips">

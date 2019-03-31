@@ -57,20 +57,14 @@ export const shopList = (latitude, longitude, offset, restaurant_category_id = '
     order_by,
     'delivery_mode[]': deliveryMode + supportStr
   })
-  // return axios.get('http://elm.cangdu.org/shopping/restaurants', {
-  //   params: {
-  //     latitude,
-  //     longitude,
-  //     offset,
-  //     limit: '20',
-  //     'extras[]': 'activities',
-  //     keyword: '',
-  //     restaurant_category_id,
-  //     'restaurant_category_ids[]': restaurant_category_ids,
-  //     order_by,
-  //     'delivery_mode[]': deliveryMode + supportStr
-  //   }
-  // })
+}
+
+export const searchListByCategoryId = (geohash, title, restaurant_category_id = 1) => {
+  return api.get('https://cangdu.org/elm/food', {
+    geohash,
+    title,
+    restaurant_category_id
+  })
 }
 
 /**
