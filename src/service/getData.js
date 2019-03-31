@@ -1,5 +1,6 @@
 import axios from 'axios'
 import fetch from '../config/fetch'
+import { api } from '../config/api'
 
 /**
  * 获取当前地址
@@ -44,20 +45,32 @@ export const shopList = (latitude, longitude, offset, restaurant_category_id = '
       supportStr += '&support_ids[]=' + item.id
     }
   })
-  return axios.get('http://elm.cangdu.org/shopping/restaurants', {
-    params: {
-      latitude,
-      longitude,
-      offset,
-      limit: '20',
-      'extras[]': 'activities',
-      keyword: '',
-      restaurant_category_id,
-      'restaurant_category_ids[]': restaurant_category_ids,
-      order_by,
-      'delivery_mode[]': deliveryMode + supportStr
-    }
+  return api.get('http://elm.cangdu.org/shopping/restaurants', {
+    latitude,
+    longitude,
+    offset,
+    limit: '20',
+    'extras[]': 'activities',
+    keyword: '',
+    restaurant_category_id,
+    'restaurant_category_ids[]': restaurant_category_ids,
+    order_by,
+    'delivery_mode[]': deliveryMode + supportStr
   })
+  // return axios.get('http://elm.cangdu.org/shopping/restaurants', {
+  //   params: {
+  //     latitude,
+  //     longitude,
+  //     offset,
+  //     limit: '20',
+  //     'extras[]': 'activities',
+  //     keyword: '',
+  //     restaurant_category_id,
+  //     'restaurant_category_ids[]': restaurant_category_ids,
+  //     order_by,
+  //     'delivery_mode[]': deliveryMode + supportStr
+  //   }
+  // })
 }
 
 /**

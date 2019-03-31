@@ -2,7 +2,7 @@
   <div>
     <ul>
       <li class="item border-bottom" v-for="item of shopListArr" :key="item.id">
-        <img class="item-img" :src="imgBaseUrl + item.image_path"/>
+        <img class="item-img" v-lazy="imgBaseUrl + item.image_path"/>
         <div class="item-info">
           <p class="item-title" :class="item.is_premium? 'premium': ''">{{item.name}}</p>
           <section class="rating_order">
@@ -81,7 +81,7 @@ export default {
     async initData () {
       // 获取数据
       let res = await shopList(this.currentAddr.latitude, this.currentAddr.longitude, this.offset)
-      res = res.data
+      // res = res.data
       this.shopListArr = [...res]
     },
     async handleScroll () {
@@ -91,9 +91,9 @@ export default {
           this.offset += 20
           // 获取数据
           let res = await shopList(this.currentAddr.latitude, this.currentAddr.longitude, this.offset)
-          res = res.data
+          // res = res.data
           this.shopListArr = [...this.shopListArr, ...res]
-          if (res.length <= 20) {
+          if (res.length < 20) {
             this.touend = true // 到底了
           }
           this.loading = true

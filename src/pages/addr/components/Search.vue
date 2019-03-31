@@ -1,7 +1,8 @@
 <template>
   <div>
     <div class="search">
-      <input v-model="keyword" class="search_input" type="search" placeholder="请输入地址" v-on:input="searchAddr()" />
+      <input v-focus v-model="keyword" class="search_input" type="search" placeholder="请输入地址"
+             v-on:input="searchAddr()"/>
     </div>
     <div class="title border-topbottom"  v-show="!historytitle">请选择匹配的地址</div>
     <div class="title border-topbottom"  v-show="historytitle">搜索历史</div>
@@ -39,6 +40,14 @@ export default {
           return JSON.parse(this.currentCitys)
         }
         return this.currentCitys
+      }
+    }
+  },
+  directives: {
+    focus: {
+      // 指令的定义
+      inserted: function (el) {
+        el.focus()
       }
     }
   },

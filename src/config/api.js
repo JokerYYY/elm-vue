@@ -33,6 +33,6 @@ const api = {
       alert('服务器出错')
       console.log(err)
     }
-  }
+  },
 }
-export default { api }
+export { api }
